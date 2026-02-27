@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "resume-parser"
-        DOCKERHUB_REPO = "harshnilve/resume-parser"
+        DOCKERHUB_REPO = "harshnilve28/resume-parser"
         AZURE_VM_IP = "10.0.0.5"
     }
 
