@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/harshnilve28/resume-parser.git'
+                git branch: 'main', url: 'https://github.com/harshnilve28/resume-parser.git'
             }
         }
 
