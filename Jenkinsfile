@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'venv/bin/pytest'
+                sh 'PYTHONPATH=. venv/bin/pytest'
             }
         }
 
