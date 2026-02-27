@@ -5,29 +5,23 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                rm -rf venv
                 python3 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
-                pip install -r requirements.txt
+                venv/bin/pip install --upgrade pip
+                venv/bin/pip install -r requirements.txt
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '''
-                . venv/bin/activate
-                pytest
-                '''
+                sh 'venv/bin/pytest'
             }
         }
 
         stage('Run Pylint') {
             steps {
-                sh '''
-                . venv/bin/activate
-                pylint *.py
-                '''
+                sh 'venv/bin/pylint *.py'
             }
         }
 
