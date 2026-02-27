@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/harshnilve28/resume-parser.git'
-            }
-        }
-
         stage('Install Python') {
             steps {
                 sh '''
