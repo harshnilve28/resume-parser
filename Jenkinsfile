@@ -5,6 +5,7 @@ pipeline {
         IMAGE_NAME = "resume-parser"
         DOCKERHUB_REPO = "harshnilve28/resume-parser"
         AZURE_VM_IP = "10.0.0.5"
+        CONTAINER_NAME = "resume-api-container"
     }
 
     stages {
@@ -66,9 +67,9 @@ pipeline {
                     sh '''
                     ssh -o StrictHostKeyChecking=no azureuser@$AZURE_VM_IP "
                     docker pull $DOCKERHUB_REPO:latest &&
-                    docker stop resume-parser || true &&
-                    docker rm resume-parser || true &&
-                    docker run -d -p 5000:5000 --name resume-parser $DOCKERHUB_REPO:latest
+                    docker stop $CONTAINER_NAME || true &&
+                    docker rm $CONTAINER_NAME || true &&
+                    docker run -d -p 5000:5000 --name $CONTAINER_NAME $DOCKERHUB_REPO:latest
                     "
                     '''
                 }
