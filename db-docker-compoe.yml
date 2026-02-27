@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  db:
+    image: supabase/postgres:15.1.0.117
+    container_name: supabase-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: resumes
