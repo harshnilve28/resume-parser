@@ -1,10 +1,12 @@
-import psycopg2
+"""Database helper functions for inserting resume data into PostgreSQL."""
 import uuid
 import logging
 
+import psycopg2
+
 def get_connection():
     return psycopg2.connect(
-        host="10.0.0.4",  
+        host="10.0.0.4",
         database="resumes",
         user="postgres",
         password="password",
