@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
-                python -m pytest
+                pytest
                 '''
             }
         }
@@ -26,7 +26,6 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
-                pip install pylint
                 pylint *.py
                 '''
             }
