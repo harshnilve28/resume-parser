@@ -5,13 +5,22 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/harshnilve28/resume-parser.git'
+                git 'https://github.com/harshnilve28/resume-parser.git'
+            }
+        }
+
+        stage('Install Python') {
+            steps {
+                sh '''
+                apt-get update
+                apt-get install -y python3 python3-pip
+                '''
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
             }
         }
 
