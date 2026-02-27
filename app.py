@@ -1,6 +1,9 @@
-from flask import Flask, request, jsonify
-from db import insert_candidate
+"""Flask API for receiving parsed resume data and storing it in PostgreSQL."""
 import logging
+
+from flask import Flask, request, jsonify
+
+from db import insert_candidate
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
