@@ -1,12 +1,12 @@
-version: "3.8"
+version: "3"
 
 services:
-  db:
-    image: supabase/postgres:15.1.0.117
-    container_name: supabase-db
-    restart: always
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
     ports:
-      - "5432:5432"
+      - "5678:5678"
+    restart: always
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: resumes
+      - N8N_HOST=0.0.0.0
+      - N8N_SECURE_COOKIE=false
