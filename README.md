@@ -113,19 +113,14 @@ All 3 VMs are deployed inside a single VNet with **static private IPs** for secu
 
 ### 5. Supabase Database
 <!-- Add your Supabase/DB screenshot here -->
-![Supabase DB](./screenshots/database.png)
+![Supabase DB](./screenshots/db.png)
 
 ---
 
-### 6. Flask API Response
-<!-- Add your API response screenshot here -->
-![Flask API](./screenshots/flask_api.png)
-
----
-
-### 7. Docker Containers Running
+### 6. Docker Containers Running
 <!-- Add your docker ps screenshot here -->
-![Docker Containers](./screenshots/docker.png)
+![Docker Containervm2](./screenshots/vm2-container.png)
+![Docker Containervm3](./screenshots/vm3-container.png)
 
 ---
 
